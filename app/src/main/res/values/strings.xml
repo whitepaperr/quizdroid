@@ -1,0 +1,136 @@
+<resources>
+    <string name="app_name">quizdroid</string>
+    <string-array name="quiz_topics">
+        <item>Math</item>
+        <item>Physics</item>
+        <item>Marvel Super Heroes</item>
+    </string-array>
+
+    <string name="math_description">Math is the study of numbers, shapes, and patterns.</string>
+    <string name="physics_description">Physics is the natural science that studies matter, its motion and behavior through space and time.</string>
+    <string name="marvel_description">Marvel Super Heroes are iconic comic book characters from the Marvel Universe.</string>
+
+    <string-array name="math_questions">
+        <item>What is 2 + 2?</item>
+        <item>What is the square root of 16?</item>
+        <item>What is 5 * 3?</item>
+        <item>What is 10 - 4?</item>
+        <item>What is 15 / 3?</item>
+    </string-array>
+    <string-array name="math_choices_0">
+        <item>4</item>
+        <item>22</item>
+        <item>2</item>
+        <item>0</item>
+    </string-array>
+    <string-array name="math_choices_1">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string-array name="math_choices_2">
+        <item>8</item>
+        <item>10</item>
+        <item>15</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="math_choices_3">
+        <item>1</item>
+        <item>4</item>
+        <item>6</item>
+        <item>10</item>
+    </string-array>
+    <string-array name="math_choices_4">
+        <item>5</item>
+        <item>4</item>
+        <item>7</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="physics_questions">
+        <item>What is the force of gravity on Earth?</item>
+        <item>What is the speed of light?</item>
+        <item>The SI unit of displacement is</item>
+        <item>Which one of the following is a vector quantity?</item>
+    </string-array>
+    <string-array name="physics_choices_0">
+        <item>9.6</item>
+        <item>9.8</item>
+        <item>1.6</item>
+        <item>3.7</item>
+    </string-array>
+    <string-array name="physics_choices_1">
+        <item>2992458</item>
+        <item>299792410</item>
+        <item>299792458</item>
+        <item>269432451</item>
+    </string-array>
+    <string-array name="physics_choices_2">
+        <item>Kilometer</item>
+        <item>Centimetres</item>
+        <item>Meter</item>
+        <item>Millimetre</item>
+    </string-array>
+    <string-array name="physics_choices_3">
+        <item>Speed</item>
+        <item>Pressure</item>
+        <item>Energy</item>
+        <item>Velocity</item>
+    </string-array>
+
+    <string-array name="marvel_questions">
+        <item>Who is Tony Stark?</item>
+        <item>How many Infinity Stones are there?</item>
+        <item>Who is the leader of the Guardians of the Galaxy?</item>
+        <item>Wanda and her brother Pietro are from where?</item>
+    </string-array>
+    <string-array name="marvel_choices_0">
+        <item>Iron Man</item>
+        <item>Spider Man</item>
+        <item>Thor</item>
+        <item>Captain America</item>
+    </string-array>
+    <string-array name="marvel_choices_1">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string-array name="marvel_choices_2">
+        <item>Ronan</item>
+        <item>Thanos</item>
+        <item>Groot</item>
+        <item>Star-Lord</item>
+    </string-array>
+    <string-array name="marvel_choices_3">
+        <item>Korea</item>
+        <item>Sokovia</item>
+        <item>Japan</item>
+        <item>Panama</item>
+    </string-array>
+
+    <string name="your_answer">Your Answer: %1$s</string>
+    <string name="correct_answer">Correct Answer: %1$s</string>
+    <string name="score">Score: %1$d out of %2$d</string>
+
+    <string name="math_correct_answer_0">4</string>
+    <string name="math_correct_answer_1">4</string>
+    <string name="math_correct_answer_2">15</string>
+    <string name="math_correct_answer_3">6</string>
+    <string name="math_correct_answer_4">5</string>
+
+    <string name="physics_correct_answer_0">9.8</string>
+    <string name="physics_correct_answer_1">299792458</string>
+    <string name="physics_correct_answer_2">Meter</string>
+    <string name="physics_correct_answer_3">Velocity</string>
+
+    <string name="marvel_correct_answer_0">Iron Man</string>
+    <string name="marvel_correct_answer_1">6</string>
+    <string name="marvel_correct_answer_2">Star-Lord</string>
+    <string name="marvel_correct_answer_3">Sokovia</string>
+
+    <string name="finish">Finish</string>
+    <string name="next">Next</string>
+
+</resources>
