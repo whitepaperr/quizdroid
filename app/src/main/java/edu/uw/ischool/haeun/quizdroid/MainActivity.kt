@@ -11,15 +11,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val topicsListView = findViewById<ListView>(R.id.topicsListView)
-        val topics = resources.getStringArray(R.array.quiz_topics)
+        val app = application as QuizApp
+        val topics = app.topicRepository.getAllTopics().map { it.title }
 
+        val topicsListView: ListView = findViewById(R.id.topicsListView)
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, topics)
         topicsListView.adapter = adapter
 
         topicsListView.setOnItemClickListener { _, _, position, _ ->
+            val selectedTopic = topics[position]
             val intent = Intent(this, TopicOverviewActivity::class.java).apply {
-                putExtra("TOPIC_INDEX", position)
+                putExtra("TOPIC_NAME", selectedTopic)
             }
             startActivity(intent)
         }

@@ -11,31 +11,21 @@ class TopicOverviewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.topic_overview)
 
-        val topicIndex = intent.getIntExtra("TOPIC_INDEX", 0)
-        val topics = resources.getStringArray(R.array.quiz_topics)
-        val descriptions = arrayOf(
-            getString(R.string.math_description),
-            getString(R.string.physics_description),
-            getString(R.string.marvel_description)
-        )
+        val topicName = intent.getStringExtra("TOPIC_NAME")!!
+        val app = application as QuizApp
+        val topic = app.topicRepository.getTopicByName(topicName)!!
 
-        val topicTextView = findViewById<TextView>(R.id.topicTextView)
-        topicTextView.text = topics[topicIndex]
+        findViewById<TextView>(R.id.topicTextView).text = topic.title
+//        findViewById<TextView>(R.id.topicShortDesc).text = topic.shortDescription
+        findViewById<TextView>(R.id.topicDescription).text = topic.longDescription
+        findViewById<TextView>(R.id.topicQuestionCount).text = "Questions: ${topic.questions.size}"
 
-        val descriptionTextView = findViewById<TextView>(R.id.topicDescription)
-        descriptionTextView.text = descriptions[topicIndex]
-
-        val topicQuestionCountTextView = findViewById<TextView>(R.id.topicQuestionCount)
-        val questionCounts = arrayOf(5, 4, 4) // Example array, adjust based on actual count
-        topicQuestionCountTextView.text = "Number of Questions: ${questionCounts[topicIndex]}"
-
-        val beginButton = findViewById<Button>(R.id.beginButton)
-        beginButton.setOnClickListener {
-            // Intent to start question activity
+        findViewById<Button>(R.id.beginButton).setOnClickListener {
             val intent = Intent(this, QuestionsActivity::class.java).apply {
-                putExtra("TOPIC_INDEX", topicIndex)
+                putExtra("TOPIC_NAME", topic.title)
             }
             startActivity(intent)
         }
     }
 }
+

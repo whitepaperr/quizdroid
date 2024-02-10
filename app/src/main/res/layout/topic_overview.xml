@@ -5,6 +5,12 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <ImageView
+        android:id="@+id/topicIcon"
+        android:layout_width="39dp"
+        android:layout_height="43dp"
+        android:src="@drawable/ic_launcher_foreground"/>
+
     <TextView
         android:id="@+id/topicTextView"
         android:layout_width="wrap_content"

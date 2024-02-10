@@ -17,7 +17,7 @@ class AnswerActivity : AppCompatActivity() {
         val score = intent.getIntExtra("SCORE", 0)
         val questionIndex = intent.getIntExtra("QUESTION_INDEX", 0)
         val totalQuestions = intent.getIntExtra("TOTAL_QUESTIONS", 0)
-        val topicIndex = intent.getIntExtra("TOPIC_INDEX", 0)
+        val topicName = intent.getStringExtra("TOPIC_NAME") ?: ""
 
         // Bind views
         val userAnswerTextView: TextView = findViewById(R.id.userAnswerTextView)
@@ -26,24 +26,23 @@ class AnswerActivity : AppCompatActivity() {
         val nextOrFinishButton: Button = findViewById(R.id.nextOrFinishButton)
 
         // Update views
-        userAnswerTextView.text = getString(R.string.your_answer, userAnswer)
-        correctAnswerTextView.text = getString(R.string.correct_answer, correctAnswer)
-        scoreTextView.text = getString(R.string.score, score, totalQuestions)
+        userAnswerTextView.text = "Your answer: $userAnswer"
+        correctAnswerTextView.text = "Correct answer: $correctAnswer"
+        scoreTextView.text = "Score: $score out of $totalQuestions"
 
-        // Set text of the button and its click listener based on whether it's the last question
-        nextOrFinishButton.text = if (questionIndex + 1 < totalQuestions) getString(R.string.next) else getString(R.string.finish)
+        val isLastQuestion = questionIndex + 1 >= totalQuestions
 
+        nextOrFinishButton.text = if (isLastQuestion) getString(R.string.finish) else getString(R.string.next)
         nextOrFinishButton.setOnClickListener {
-            if (questionIndex + 1 < totalQuestions) {
+            if (isLastQuestion) {
+                startActivity(Intent(this, MainActivity::class.java))
+            } else {
                 val nextQuestionIntent = Intent(this, QuestionsActivity::class.java).apply {
-                    putExtra("TOPIC_INDEX", topicIndex)
-                    putExtra("QUESTION_INDEX", questionIndex + 1)
+                    putExtra("TOPIC_NAME", topicName)
+                    putExtra("CURRENT_QUESTION_INDEX", questionIndex + 1)
                     putExtra("SCORE", score)
                 }
                 startActivity(nextQuestionIntent)
-            } else {
-                val finishIntent = Intent(this, MainActivity::class.java)
-                startActivity(finishIntent)
             }
             finish()
         }
