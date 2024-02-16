@@ -17,6 +17,7 @@
         <activity android:name=".AnswerActivity" />
         <activity android:name=".QuestionsActivity" />
         <activity android:name=".TopicOverviewActivity" />
+        <activity android:name=".PreferencesActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

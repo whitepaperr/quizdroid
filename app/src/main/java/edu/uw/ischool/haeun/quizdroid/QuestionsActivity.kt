@@ -59,7 +59,7 @@ class QuestionsActivity : AppCompatActivity() {
         val selectedAnswerIndex = answersGroup.indexOfChild(findViewById(selectedId))
 
         val question = currentTopic.questions[currentQuestionIndex]
-        val isCorrect = selectedAnswerIndex == question.correctAnswerIndex
+        val isCorrect = selectedAnswerIndex == question.answer
         if (isCorrect) {
             score++
         }
@@ -67,7 +67,7 @@ class QuestionsActivity : AppCompatActivity() {
         // Intent to go to AnswerActivity with extra data
         val intent = Intent(this, AnswerActivity::class.java).apply {
             putExtra("USER_ANSWER", question.answers[selectedAnswerIndex])
-            putExtra("CORRECT_ANSWER", question.answers[question.correctAnswerIndex])
+            putExtra("CORRECT_ANSWER", question.answers[question.answer])
             putExtra("SCORE", score)
             putExtra("QUESTION_INDEX", currentQuestionIndex)
             putExtra("TOTAL_QUESTIONS", currentTopic.questions.size)

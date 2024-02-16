@@ -16,8 +16,7 @@ class TopicOverviewActivity : AppCompatActivity() {
         val topic = app.topicRepository.getTopicByName(topicName)!!
 
         findViewById<TextView>(R.id.topicTextView).text = topic.title
-//        findViewById<TextView>(R.id.topicShortDesc).text = topic.shortDescription
-        findViewById<TextView>(R.id.topicDescription).text = topic.longDescription
+        findViewById<TextView>(R.id.topicDescription).text = topic.desc
         findViewById<TextView>(R.id.topicQuestionCount).text = "Questions: ${topic.questions.size}"
 
         findViewById<Button>(R.id.beginButton).setOnClickListener {

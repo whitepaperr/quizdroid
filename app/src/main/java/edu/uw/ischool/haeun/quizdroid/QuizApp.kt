@@ -7,6 +7,6 @@ class QuizApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        topicRepository = TopicRepositoryImpl()
+        topicRepository = TopicRepositoryImpl(this)
     }
 }

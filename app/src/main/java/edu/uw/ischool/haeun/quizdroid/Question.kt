@@ -3,5 +3,5 @@ package edu.uw.ischool.haeun.quizdroid
 data class Question(
     val text: String,
     val answers: List<String>,
-    val correctAnswerIndex: Int
+    val answer: Int
 )
